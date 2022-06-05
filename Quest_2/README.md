@@ -17,5 +17,53 @@
 ## 根据报告中的配置进行训练实验
 我们的报告中总共进行了三个实验。若想重新进行此实验对应的训练，请设置工作目录为./mmdetection，并对应运行以下命令：
   
-- 完全随机初始化后进行训练（实验1）。请运行命令```python tools/train.py experiments/no_pretrain_refine/faster_rcnn_r50_fpn_1x_voc0712.py --work-dir experiments/no_pretrain_refine/```。运行后，日志文件（包括tensorboard的event文件）以及模型的checkpoints将会保存到文件夹./mmdetection/experiments/no_pretrain_refine下。
-- 
+### 完全随机初始化后进行训练（实验1）
+  
+请运行命令
+  
+```
+python tools/train.py experiments/no_pretrain_refine/faster_rcnn_r50_fpn_1x_voc0712.py --work-dir experiments/no_pretrain_refine/
+```
+  
+运行后，日志文件（包括tensorboard的event文件）以及模型的checkpoints将会保存到文件夹./mmdetection/experiments/no_pretrain_refine下。
+
+### ImageNet预训练Backbone后进行训练（实验2）
+  
+请运行命令
+  
+```
+python tools/train.py experiments/image_pretrain_refine/faster_rcnn_r50_fpn_1x_voc0712.py --work-dir experiments/image_pretrain_refine/
+```
+  
+运行后，日志文件（包括tensorboard的event文件）以及模型的checkpoints将会保存到文件夹./mmdetection/experiments/image_pretrain_refine下。
+
+### Mask R-CNN在COCO上的预训练模型进行初始化Backbone后训练（实验3）
+  
+请运行命令
+  
+```
+python tools/train.py experiments/mask_pretrain_refine/faster_rcnn_r50_fpn_1x_voc0712.py --work-dir experiments/mask_pretrain_refine/
+```
+  
+运行后，日志文件（包括tensorboard的event文件）以及模型的checkpoints将会保存到文件夹./mmdetection/experiments/mask_pretrain_refine下。
+  
+## 对训练好的模型进行测试
+为了方便保存测试结果，请在./mmdetection文件夹下新建一个文件夹test，并在test文件夹下同样新建mask_pretrain_refine，image_pretrain_refine等文件夹。
+  
+运行下列命令：
+```
+python tools/test.py experiments/$选用的文件夹$/faster_rcnn_r50_fpn_1x_voc0712.py experiments/$选用的文件夹$/latest.pth --work-dir test/$选用的文件夹$/ --eval mAP
+```
+  
+其中，$选用的文件夹$可以是no_pretrain_refine、image_pretrain_refine和mask_pretrain_refine，分别对应实验1，2和3的结果。上述命令运行结束后将会输出在测试集上的mAP指标和AP50指标。
+  
+若想对测试图片的inference结果进行图像保存，可运行以下命令：
+  
+```
+ python tools/test.py experiments/$选用的文件夹$/faster_rcnn_r50_fpn_1x_voc0712.py experiments/$选用的文件夹$/latest.pth --work-dir test/$选用的文件夹$/ --show-dir test/$选用的文件夹$/
+```
+  
+$选用的文件夹$的设置同上述相同。上述命令运行后，得到的结果将保存在test/$选用的文件夹$下。
+  
+## 自定义设置训练参数
+最后，若您想自定义修改训练的参数或是其它配置，请在对应文件夹下的配置文件内进行修改。例如，如果您想用更小的学习率重新进行实验2的训练，那么请您打开./mmdetection/experiments/image_pretrain_refine/faster_rcnn_r50_fpn_1x_voc0712.py文件，找到其中关于学习率的设置部分（在226行，设置优化器optimizer处），将对应的lr进行修改。修改后，重新运行上述命令即可。

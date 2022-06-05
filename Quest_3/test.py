@@ -30,7 +30,7 @@ if __name__ == '__main__':
       
     model = ViT(
         image_size = 32,
-        patch_size = 4,
+        patch_size = 8,
         num_classes = 100,
         dim = 512,
         depth = 7,

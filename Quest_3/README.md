@@ -1,7 +1,9 @@
 ## Part3：Vision Transformer
 这是第三部分Vision Transformer的代码
-### 环境部署
-请先运行以下命令，安装Transformer所需要的库：
+### 数据与环境部署
+首先请下载CIFAR-100数据集：cifar-100-python.tar.gz，并置于data文件夹下。
+
+接着请运行以下命令，安装Transformer所需要的库：
 ```
 pip install vit-pytorch
 ```
@@ -31,4 +33,5 @@ python test.py
 python test.py --model [model_name].pth
 ```
 其中\[model_name\]在model路径下的模型权重名称。
+
 运行后将会输出测试的结果以及该模型的参数量。

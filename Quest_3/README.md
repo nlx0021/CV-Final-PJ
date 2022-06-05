@@ -16,6 +16,8 @@ python train.py --experiment experiment_name --lr 5e-3 --epochs_n 100
 ```
 tensorboard --logdir tensorboard/experiment_name
 ```
+本项目已经内置了报告中CNN与ViT的学习曲线，将上述命令中的experiment_name换成compare即可。
+
 另外，训练结束后，与这次实验相关的信息会记录在experiment文件夹中的experiment_name文件夹中，里面包含相关的曲线以及训练信息（文本文件）。
   
 训练结束后，模型会保存在model文件夹下。

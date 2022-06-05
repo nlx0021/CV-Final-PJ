@@ -16,3 +16,13 @@
 ```
 python demo/video_demo.py data/$待测试视频的文件名$ configs/segformer/$所选用的配置文件$ checkpoints/$所对应的模型参数文件$ --output-file $输出的文件路径$ --opacity $不透明度$
 ```
+  
+上面用$$括住的内容由您根据情况来进行指定。我们给出我们运行时的命令来作为一个例子，下面是我们所运行的命令：
+  
+```
+python demo/video_demo.py data/result.mp4 configs/segformer/segformer_mit-b5_8x1_1024x1024_160k_cityscapes.py checkpoints/segformer_mit-b5_8x1_1024x1024_160k_cityscapes_20211206_072934-87a052ec.pth --output-file experiments/seg_result.mp4 --opacity 1
+```
+  
+上述命令运行完后，输出的结果视频将被保存在路径 experiments/seg_result.mp4下（若没有experiments文件夹，请先创建）。
+  
+注意，最终输出的视频虽然为mp4格式文件，但是其格式编码方式可能与大部分Windows自带的视频播放软件所默认的不同。这可能导致视频播放软件无法解码此文件，导致无法播放。经过测试，我们发现将此文件传到微信后，可以通过微信自带的视频播放器进行播放。这可以预览我们的视频，但若要避免微信进行压缩，请选择合适的视频播放器进行播放。

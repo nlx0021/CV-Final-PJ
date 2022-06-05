@@ -31,16 +31,16 @@ python demo/video_demo.py data/result.mp4 configs/segformer/segformer_mit-b5_8x1
 注意，最终输出的视频虽然为mp4格式文件，但是其格式编码方式可能与大部分Windows自带的视频播放软件所默认的不同。这可能导致视频播放软件无法解码此文件，导致无法播放。经过测试，我们发现将此文件传到微信后，可以通过微信自带的视频播放器进行播放。这可以预览我们的视频，但若要避免微信进行压缩，请选择合适的视频播放器进行播放。
 
 
-## Part3：Vision Transformer
+# 第三部分———— Vision Transformer
 第三部分Vision Transformer的代码放在Question_3中。
-### 数据与环境部署
+## 数据与环境部署
 首先请下载CIFAR-100数据集：cifar-100-python.tar.gz，并置于data文件夹下。
 
 接着请运行以下命令，安装Transformer所需要的库：
 ```
 pip install vit-pytorch
 ```
-### 模型训练
+## 模型训练
 模型的训练在train.py文件中。以下是运行训练的命令示例：
 ```
 python train.py --experiment experiment_name --lr 5e-3 --epochs_n 100
@@ -57,7 +57,7 @@ tensorboard --logdir tensorboard/experiment_name
   
 可以调节训练的具体参数，包括设置是否使用cutmix、mixup以及cutout。若想进行设置，请进入train.py文件内修改，请在对应位置进行修改（有注释）。
 
-### 模型测试
+## 模型测试
 若要测试预训练的模型模型，以及获取其参数量，请从第第三题的百度网盘链接中下载vit_weights.pth文件并放在model文件夹下，随后运行以下命令。
 ```
 python test.py

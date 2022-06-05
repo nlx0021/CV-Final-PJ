@@ -63,7 +63,7 @@ python tools/test.py experiments/$选用的文件夹$/faster_rcnn_r50_fpn_1x_voc
  python tools/test.py experiments/$选用的文件夹$/faster_rcnn_r50_fpn_1x_voc0712.py experiments/$选用的文件夹$/latest.pth --work-dir test/$选用的文件夹$/ --show-dir test/$选用的文件夹$/
 ```
   
-\text{$选用的文件夹$}的设置同上述相同。上述命令运行后，得到的结果将保存在test/$选用的文件夹$下。
+\$选用的文件夹\$的设置同上述相同。上述命令运行后，得到的结果将保存在test/$选用的文件夹$下。
   
 ## 自定义设置训练参数
 最后，若您想自定义修改训练的参数或是其它配置，请在对应文件夹下的配置文件内进行修改。例如，如果您想用更小的学习率重新进行实验2的训练，那么请您打开./mmdetection/experiments/image_pretrain_refine/faster_rcnn_r50_fpn_1x_voc0712.py文件，找到其中关于学习率的设置部分（在226行，设置优化器optimizer处），将对应的lr进行修改。修改后，重新运行上述命令即可。

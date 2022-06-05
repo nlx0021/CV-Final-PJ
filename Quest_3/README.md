@@ -20,8 +20,8 @@ tensorboard --logdir tensorboard/experiment_name
   
 可以调节训练的具体参数，包括设置是否使用cutmix、mixup以及cutout。若想进行设置，请进入train.py文件内修改，请在对应位置进行修改（有注释）。
 
-### 模型测试
-若要测试预训练的模型模型，请从第第三题的百度网盘链接中下载vit_weights.pth文件并放在model文件夹下，随后运行以下命令。
+### 模型测试与参数量计算
+若要测试预训练的模型模型，以及获取其参数量，请从第第三题的百度网盘链接中下载vit_weights.pth文件并放在model文件夹下，随后运行以下命令。
 ```
 python test.py
 ```
@@ -31,4 +31,4 @@ python test.py
 python test.py --model [model_name].pth
 ```
 其中\[model_name\]在model路径下的模型权重名称。
-运行后将会输出测试的结果。
+运行后将会输出测试的结果以及该模型的参数量。

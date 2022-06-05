@@ -28,6 +28,7 @@ python test.py
 
 若要对model文件夹下自己训练的模型进行测试，请运行以下命令：
 ```
-python test.py --model [experiment_name].pth
+python test.py --model [model_name].pth
 ```
+其中\[model_name\]在model路径下的模型权重名称。
 运行后将会输出测试的结果。

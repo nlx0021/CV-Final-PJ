@@ -1,4 +1,4 @@
-# ## 第三部分———— Vision Transformer的设计与训练实验
+# 第三部分———— Vision Transformer的设计与训练实验
 这是第三部分Vision Transformer的代码
 ## 环境部署
 首先请运行以下命令，安装Transformer所需要的库：

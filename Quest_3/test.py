@@ -54,7 +54,7 @@ if __name__ == '__main__':
         pred = model(x)
         test_correct += (pred.argmax(1) == y).type(torch.float).sum().item()    
     
-    test_correct /= len_test_loader()
+    test_correct /= len(test_loader.dataset)
     
     print("The test accuracy is: %f" % test_correct)
     print('number of parameters:', get_number_of_parameters(model))

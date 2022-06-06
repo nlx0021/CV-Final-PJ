@@ -19,7 +19,7 @@ from vit_pytorch.vit_for_small_dataset import ViT
 '''
 
 from model import resnet18
-from data_loader import get_cifar_loader, len_test_loader
+from data_loader import get_cifar_loader
 from utils import rand_bbox
 from utils import get_number_of_parameters
 
@@ -214,7 +214,7 @@ def train(model,
         pred = model(x)
         test_correct += (pred.argmax(1) == y).type(torch.float).sum().item()    
     
-    test_correct /= len_test_loader()
+    test_correct /= len(test_loader.dataset)
     
     print("The test accuracy is: %f" % test_correct)
     

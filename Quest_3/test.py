@@ -12,7 +12,7 @@ from torchtoolbox.tools import mixup_data, mixup_criterion
 from torch.utils.tensorboard import SummaryWriter
 
 from vit_pytorch import ViT
-from data_loader import get_cifar_loader, len_test_loader
+from data_loader import get_cifar_loader
 from utils import get_number_of_parameters
 
 if __name__ == '__main__':

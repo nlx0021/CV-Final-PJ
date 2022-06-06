@@ -29,6 +29,7 @@ tensorboard --logdir tensorboard/experiment_name
 ```
 python test.py
 ```
+【勘误】预训练模型的准确率实际为51.57\%，报告中笔误写为53.57\%。
 
 若要对model文件夹下自己训练的模型进行测试，请运行以下命令：
 ```

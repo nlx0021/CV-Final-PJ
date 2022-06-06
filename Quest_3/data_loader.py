@@ -92,6 +92,3 @@ if __name__ == '__main__':
         plt.show()
         print(X[0].max())
         print(X[0].min())
-        
-def len_test_loader():
-    return 9627

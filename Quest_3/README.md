@@ -1,13 +1,14 @@
-## Part3：Vision Transformer
+# ## 第三部分———— Vision Transformer的设计与训练实验
 这是第三部分Vision Transformer的代码
-### 数据与环境部署
-首先请下载CIFAR-100数据集：cifar-100-python.tar.gz，并置于data文件夹下。
-
-接着请运行以下命令，安装Transformer所需要的库：
+## 环境部署
+首先请运行以下命令，安装Transformer所需要的库：
 ```
 pip install vit-pytorch
 ```
-### 模型训练
+## 数据部署
+请下载CIFAR-100数据集：$cifar-100-python.tar.gz$，并置于data文件夹下。
+
+## 模型训练
 模型的训练在train.py文件中。以下是运行训练的命令示例：
 ```
 python train.py --experiment experiment_name --lr 5e-3 --epochs_n 100
@@ -24,7 +25,7 @@ tensorboard --logdir tensorboard/experiment_name
   
 可以调节训练的具体参数，包括设置是否使用cutmix、mixup以及cutout。若想进行设置，请进入train.py文件内修改，请在对应位置进行修改（有注释）。
 
-### 模型测试与参数量计算
+## 模型测试与参数量计算
 若要测试预训练的模型模型，以及获取其参数量，请从第第三题的百度网盘链接中下载vit_weights.pth文件并放在model文件夹下，随后运行以下命令。
 ```
 python test.py
